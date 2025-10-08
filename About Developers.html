@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Developers</title>
+        <link rel="icon" type="imgae/png" href="LCBA - Copy.png">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    </head>
+        <style> 
+            *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',
+    sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 35px 12%;
+    background: #000c85;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.logo{
+    font-size: 25px;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+        
+.navbar a{
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    margin: 0 20px;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active{
+    color: #FFD700;
+    border-bottom: 3px solid transparent;
+}
+.contact{
+    padding: 10px 28px;
+    background-color: white;
+    color: black;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+.contact:hover{
+    background-color: white;
+    box-shadow: 0 0 25px white;
+    color: white;
+}
+.home{
+    width: 100%;
+    min-height: 100vh;
+    background: rgb(241, 241, 241);
+    display: flex;
+    align-items: center;
+    gap: 7em;
+    padding: 30px 12% 0;
+}
+.credits {
+    text-align: center;
+    padding: 100px 0;
+    background: #f1f1f1;
+    margin-top: 100px; /* Lowered position */
+}
+.credits h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #000c85;
+    margin-bottom: 20px;
+}
+.credit-container {
+    display: flex;
+    justify-content: center; /* Center cards horizontally */
+    align-items: center; /* Align items vertically */
+    gap: 20px;
+    flex-wrap: wrap;
+    text-align: center;
+    max-width: 1000px; /* Adjust based on layout */
+    margin: 0 auto; /* Ensures centering within parent */
+}
+.credit-card {
+    flex: 1;
+    max-width: 300px; /* Prevents stretching */
+    min-width: 250px; /* Adjust card width as needed */
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    height: 350px; /* Set a fixed height */
+}
+.credit-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+.credit-card h3 {
+    font-size: 22px;
+    color: #000c85;
+    margin-bottom: 10px;
+}
+.credit-card p {
+    font-size: 16px;
+    color: #555;
+}
+::-webkit-scrollbar{
+    width: 15px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: gold;
+}
+::-webkit-scrollbar-track{
+    background-color: whitesmoke;
+    width: 50px;
+}
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12% 8%;
+    gap: 10em;
+    background: whitesmoke;
+}
+.about-content h2{
+    text-align:center;
+    color: rgb(0, 0, 0);
+    font-size: 42px;
+}
+.about-content h3{
+    font-size: 62px;
+    color: rgb(0, 0, 0);
+}
+.about-content p{
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    margin: 2em 0 3em;
+}
+.contact-form h2{
+    text-align: center;
+    margin-top: 3em;
+    margin-bottom: 1em;
+    font-size: 36px;
+}
+.contact-form form{
+    max-width: 50em;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3em;
+}
+.contact-form form .input-box{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact-form form .input-box input,
+.contact-form form textarea{
+    width: 100%;
+    padding: 1.5em;
+    font-size: 18px;
+    color: black;
+    background: rgb(241, 241, 241);
+    border-radius: .8rem;
+    margin: 1rem 0;
+    resize: none;
+}
+
+.footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 40px 0;
+    background-color: #000c85;
+}
+.footer .social{
+    text-align: center;
+    padding-bottom: 25px;
+    color: white;
+}
+.footer .social a{
+    font-size: 24px;
+    color: whitesmoke;
+    border: 2px solid whitesmoke;
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 8px;
+    box-shadow: inset 0 0 10px #000c85, 0 0 10px
+    #000c85;
+    transition: 0,3s ease;
+}
+.footer .social a:hover{
+    transform: scale(1.2)translateY(-10px);
+    color: gold;
+    border: 2px solid whitesmoke;
+}
+.footer ul{
+    margin-top: 0;
+    padding: 0;
+    font-size: 10px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+}
+.footer ul li a{
+    color: whitesmoke;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease;
+}
+.footer ul li a:hover{
+    border-bottom: 3px solid gold;
+}
+.footer ul li{
+    display: inline-block;
+    padding: 15px;
+}
+
+.footer .info{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    margin-right: 570px;
+    margin-left:570px;
+    color:white;
+    line-height: 2;
+    font-size: 13px;
+    margin: 0px;
+}
+.info i{
+    color:gold;
+}
+.info a {
+        text-decoration: none;
+        color: whitesmoke;
+        transition: color 0.3s ease;
+}  
+.info a:hover {
+        color: gold;
+}
+.footer .copyright{
+    margin-top: 15px;
+    text-align: center;
+    font-size: 12px;
+    color: whitesmoke;  
+}
+
+.dropbtn {
+  background-color: transparent;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #000c85;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 15px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: transparent}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: transparent;
+}
+.logoimage{
+    background-size: 50px;
+    width: 100px;
+    height: 35px;
+    margin-top: 5px;
+    margin-left: 0px;
+    padding-right: 0px;
+    border:0px;
+}
+html {
+    scroll-behavior: smooth;
+}
+   /* Mobile responsiveness */
+   @media (max-width: 768px) {
+            .header {
+                padding: 20px 5%;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .logo {
+                font-size: 22px;
+            }
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding-top: 10px;
+            }
+            .navbar a {
+                margin: 10px 0;
+                font-size: 16px;
+            }
+            .home {
+                padding: 30px 5%;
+                gap: 3em;
+            }
+            .home-content h1 {
+                font-size: 30px;
+            }
+            .home-content h3 {
+                font-size: 32px;
+            }
+            .footer .social {
+                padding-top: 20px;
+            }
+            .footer .social a {
+                font-size: 20px;
+                margin: 10px;
+            }
+            .footer .info {
+                font-size: 12px;
+                padding: 20px 10px;
+            }
+        }
+
+        /* Further responsiveness for very small screens (mobile devices) */
+        @media (max-width: 480px) {
+            .home-content h1 {
+                font-size: 26px;
+            }
+            .home-content h3 {
+                font-size: 28px;
+            }
+            .home-content p {
+                font-size: 16px;
+            }
+            .slideshow-container {
+                max-width: 100%;
+            }
+            .footer .info {
+                font-size: 10px;
+            }
+        }
+        /* Navbar items on mobile */
+@media (max-width: 768px) {
+    /* Make the navbar links stack vertically */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 10px;
+        background-color: #000c85;  /* Ensure a consistent background */
+        width: 100%; /* Ensure full width for the navbar */
+    }
+
+    /* Adjust navbar links for better spacing and font size */
+    .navbar a {
+        margin: 10px 0;  /* Space out links vertically */
+        font-size: 16px;
+        padding: 10px 20px;
+        width: 100%;  /* Make links take the full width of the container */
+        text-align: left;  /* Align text to the left */
+        border-bottom: 1px solid #fff;  /* Add separation between links */
+    }
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none; /* Hide hamburger by default */
+    cursor: pointer;
+    font-size: 30px;
+    color: white;
+    transition: 0.3s ease;
+}
+
+/* Display hamburger menu on small screens */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block;  /* Show hamburger menu */
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        z-index: 200;
+    }
+}
+
+/* Mobile menu visibility toggle */
+.navbar.open {
+    display: block;  /* Show the navbar when "open" class is added */
+}
+
+.text1{
+    font-size: 20px;
+    color:#000c85;
+    opacity: 20%;
+}
+.text1 span{
+    font-weight: bold;
+}
+        </style>
+
+    <body>
+        <header class="header">
+            <a href="http://127.0.0.1:5501/LCBA%20Home.html" class="logo"><img src="LCBA LOGO.png" class="logoimage"></div></a>
+            
+            <nav class="navbar">
+                <a class="active" href="http://127.0.0.1:5501/LCBA%20Home.html"><i class="fa-solid fa-house"></i> Home</a> 
+                <a href="http://127.0.0.1:5501/TVL%20Strand.html"><i class='bx bxs-bookmarks'></i> TVL Strand</a> 
+               
+                <div class="dropdown">
+                    <button class="dropbtn"><i class="fa-solid fa-user-gear"></i> TVL ICT</button>
+                    <div class="dropdown-content">
+                      <a href="http://127.0.0.1:5501/About%20ICT.html">About</a>
+                      <a href="http://127.0.0.1:5501/Gallery%20ICT.html">Gallery</a>
+                      <a href="http://127.0.0.1:5501/Videos%20ICT.html">Videos</a>
+                    </div>
+                  </div>
+
+                  <div class="dropdown">
+                    <button class="dropbtn"><i class="fa-solid fa-utensils"></i> TVL HE</button>
+                    <div class="dropdown-content">
+                      <a href="http://127.0.0.1:5501/About%20HE.html">About</a>
+                      <a href="http://127.0.0.1:5501/Gallery%20HE.html">Gallery</a>
+                      <a href="http://127.0.0.1:5501/Videos%20HE.html"> Videos</a>
+                    </div>
+             </div>
+            </nav>
+
+        </header>
+        <section class="credits">
+            <h2>Meet the Developers</h2>
+            <div class="credit-container">
+                <div class="credit-card">
+                    <img src="merj.jpg" alt="Developer 1">
+                    <h3>Jermie Gapas</h3>
+                    <br>
+                    <p>ICT 12 - STABILITY</p>
+                    <br>
+                    <p>Frontend & Backend Developer</p>
+                </div>
+                <div class="credit-card">
+                    <img src="bic1.jpg" alt="Developer 2">
+                    <h3>John Bic Gallenito</h3>
+                    <br>
+                    <p>ICT 12 - STABILITY</p>
+                    <br>
+                    <p>Frontend & Backend Developer</p>
+                </div>
+                <div class="credit-card">
+                    <img src="pama1.jpg" alt="Developer 3">
+                    <h3>Benjhun Pama</h3>
+                    <br>
+                    <p>ICT 12 - STABILITY</p>
+                    <br>
+                    <p>Frontend & Backend Developer</p>
+                </div>
+            </div>
+            <br><br>
+            <div class="text1">
+                <p>Sponsored By: <span>barnakol</span></p>
+            </div>
+        </section>
+
+        <footer class="footer">
+
+            <div class="social">
+                <a href="https://www.facebook.com/LCBAofficial"><i class='bx bxl-facebook-circle'></i></a>
+                <a href="https://www.tiktok.com/@lcba.official?lang=en"><i class='bx bxl-tiktok' ></i></a>
+                <a href="https://www.youtube.com/@lagunacollegeofbusinessand8939"><i class='bx bxl-youtube'></i></a>
+                <a href="https://www.instagram.com/lcbaofficial/"><i class='bx bxl-instagram-alt' ></i></a>
+            </div>
+        
+            <div class="info">
+                <h1>Contacts</h1>
+                <p><i class='bx bxs-phone' ></i> SMART: 0961-074-5530</p>
+                <p><i class='bx bx bx-envelope' ></i> info@lcba.edu.ph</p>
+                <p><i class='bx bxs-location-plus' ></i> P.Burgos St., Calamba City, Laguna, 4027</p>
+                <a href="http://127.0.0.1:5501/About%20Developers.html">About Developers?</a>
+            </div>
+
+            <br>
+            <p class="copyright">@ LCBA | All
+                Right Reserved
+            </p>
+        </footer>
+    </body>
+</html>
